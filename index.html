@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贪吃蛇</title>
+</head>
+<style>
+  *{
+  margin: 0;
+  padding: 0;
+  }
+body{
+background-color: grey; 
+height: 100%;
+}
+.but{
+  width:200px;
+
+position: absolute;
+
+}
+.but button{
+  border-radius: 20%;
+  width: 50px;
+  height: 50px;
+ color: aliceblue;
+ background-color: orange; 
+}
+.map{
+ width: 400px;
+ height: 500px;
+ background-color: rgb(0, 183, 255);
+ box-shadow: 0px 0px 10px black inset,0px 0px 30px rgb(0, 217, 255);
+ position: fixed;
+ margin-top: 50px;
+
+ 
+}
+.head{
+  box-shadow: 0px 0px 10px white;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: repeating-radial-gradient(orange,red);
+  
+}
+.body{
+  box-shadow: 0px 0px 10px green;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: repeating-radial-gradient(yellow,red);
+}
+.food{
+border-radius: 50%;
+  width: 20px;
+height: 20px;
+position: absolute;
+background-color: red;
+box-shadow: 0px 0px 10px orange;
+animation: footAnimate 1s linear infinite ;
+
+}
+.die{
+  position: absolute;
+  left: 25%;
+  top: 35%;
+  font-size: 400%;
+}
+@keyframes footAnimate{
+  0%{
+    box-shadow: 0px 0px 10px black;
+  }
+  50%{
+    box-shadow: 0px 0px 200px black;
+  }
+  100%{
+    box-shadow: 0px 0px 10px black;
+  }
+  
+}
+.kong{
+  position:absolute;
+  width:100%;
+  
+  height:40px;
+  bottom: 100px;
+  
+  
+}
+.kong button{
+  background-color: yellow;
+  width: 70px;
+  height: 70px;
+  margin-left: 5%;
+  border-radius: 20%;
+}
+  #score{
+    position:absolute;
+    border-radius: 10%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 75%;
+    color: grey;
+  }
+  #lScore{
+    position:absolute;
+    left:80%;
+    top: -50px
+  }
+</style>
+<body>
+  <div class="but">
+  <button id="start" onclick="game.start()">开始</button>
+  <button id="pause" onclick="game.pause()">暂停</button>
+  <button id="restart" onclick="game.restart()">结束</button>
+
+</div>
+<div class="map">
+  <div id="score">
+
+  
+
+</div>
+<div id="lScore">
+
+</div>
+</div>
+
+<div class="kong">
+  <button onclick="game.changeZuo()" id="left">←</button>
+  <button onclick="game.changeShang()" id="up">↑</button>
+  <button onclick="game. changeXia()" id="down">↓</button>
+  <button onclick="game.changeYou()" id="right">→</button>
+</div>
+<audio src="./anniu.mp3" id="anniu"></audio>
+<audio src="./Background music.mp3" autoplay loop></audio>
+<audio  id="die"><source src="./die.mp3" type="audio/mpeg"></audio>
+<script src="./food.js"></script>
+<script src="./she.js"></script>
+<script src="./game.js"></script>
+<script>
+const game=new Game(".map");
+const up=document.querySelector('#up')
+const left=document.querySelector('#left')
+const right=document.querySelector('#right')
+const down=document.querySelector('#down')
+const anuiu=document.querySelector('#anniu')
+const start=document.querySelector('#start')
+const pause=document.querySelector('#pause')
+const restart=document.querySelector('#restart')
+up.addEventListener('click',function(){
+  anniu.play()
+})
+left.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+right.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+down.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+start.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+pause.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+restart.addEventListener('click',function(){
+
+  anniu.play()
+
+})
+</script>
+</body>
+  </html> 
